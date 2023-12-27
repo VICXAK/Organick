@@ -1,0 +1,12 @@
+@use './styles/common' as c;
+
+.header {
+    padding: 69px 162px;
+
+    @include c.media(1500px) {
+        padding: 69px 60px;
+    }
+    @include c.media(c.$sm) {
+        padding: 30px 15px;
+    }
+}

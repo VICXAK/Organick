@@ -1,0 +1,72 @@
+@use '../styles/common' as c;
+
+.product {
+    padding: 29px 30px 17px;
+    border-radius: 30px;
+    background: #f9f8f8;
+
+
+    &__category {
+        padding-left: 30px;
+        border-radius: 8px;
+        background: c.$main;
+        padding: 6px 12px;
+        color: c.$white;
+        text-align: center;
+        font-family: c.$openSans;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 100%;
+        text-transform: capitalize;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+    }
+    &__picture {
+        height: 324px;
+        object-fit: cover;
+    }
+    &__title {
+        color: c.$main;
+        text-align: center;
+        font-family: c.$roboto;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin-bottom: 13px;
+    }
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid #dedddd;
+        padding-top: 6px;
+    }
+    &__price {
+        display: flex;
+        align-items: center;
+
+        &-old {
+            color: #b8b8b8;
+            text-align: center;
+            font-family: c.$openSans;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            margin-right: 8px;
+            text-decoration: line-through;
+        }
+        &-new {
+            color: c.$main;
+            text-align: center;
+            font-family: c.$openSans;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+    }
+}

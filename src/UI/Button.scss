@@ -1,0 +1,42 @@
+@use '../styles/common' as c;
+
+.button {
+    display: flex;
+    padding: 28px 39px 29px 39px;
+    color: c.$white;
+    font-family: c.$roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    background-color: c.$main;
+    border: none;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 240px;
+    width: 100%;
+    transition: box-shadow ease 0.3s;
+    & > svg {
+        fill: c.$white;
+        margin-left: 10px;
+    }
+    &:hover {
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4) inset;
+    }
+}
+
+.button.btn-yellow {
+    @extend .button;
+    background-color: c.$yellow;
+    color: c.$main;
+    & > svg {
+        fill: c.$main;
+    }
+}
+.button.btn-border {
+    @extend .btn-yellow;
+    background-color: c.$white;
+    border: 1px solid c.$main;
+}

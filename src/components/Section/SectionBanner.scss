@@ -1,0 +1,71 @@
+@use '../../styles/common' as c;
+
+.banner {
+    @include c.d-grid(12, 376px);
+    column-gap: 36px;
+    padding-bottom: 190px;
+
+    @include c.media(c.$md) {
+        column-gap: 0;
+        row-gap: 36px;
+    }
+
+    &__natural {
+        background-image: url('../../assets/banner-1.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        grid-column: span 6;
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 50px;
+
+        @include c.media(c.$sm) {
+            padding-left: 0;
+            align-items: center;
+            text-align: center;
+        }
+
+        & > h3 {
+            color: c.$white;
+            font-family: c.$yellowTail;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin-bottom: 5px;
+        }
+        & > span {
+            color: c.$white;
+            font-family: c.$roboto;
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 800;
+            line-height: normal;
+            max-width: 265px;
+            width: 100%;
+
+            @include c.media(c.$sm) {
+                font-size: 30px;
+            }
+        }
+
+        @include c.media(c.$md) {
+            grid-column: span 12;
+            background-position: 70%;
+        }
+    }
+    &__offer {
+        @extend .banner__natural;
+        background-image: url('../../assets/banner-2.jpg');
+
+        & > h3 {
+            color: c.$green;
+        }
+        & > span {
+            color: c.$main;
+        }
+    }
+}

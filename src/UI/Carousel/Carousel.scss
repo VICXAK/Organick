@@ -1,0 +1,103 @@
+@use '../../styles/common' as c;
+
+.carousel {
+    // overflow: hidden;
+    max-width: 780px;
+    width: 100%;
+    height: 370px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 102px;
+    @include c.media(c.$xs) {
+        height: 410px;
+    }
+
+    .inner {
+        transition: transform 0.3s;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+    }
+
+    &-item {
+        transition: opacity 0.5s ease-in;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        opacity: 0;
+        text-align: center;
+
+        &.active {
+            opacity: 1;
+        }
+
+        &__person {
+            width: 115px;
+            height: 115px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        &__rating {
+            margin-bottom: 25px;
+        }
+        &__description {
+            color: c.$darkGray;
+            text-align: center;
+            font-family: c.$openSans;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 165.4%;
+            margin-bottom: 20px;
+
+            @include c.media(c.$xs) {
+                line-height: 150%;
+            }
+        }
+        &__name {
+            color: c.$main;
+            font-family: c.$roboto;
+            font-size: 25px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+        }
+        &__position {
+            color: c.$darkGray;
+            font-family: c.$openSans;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 165.4%;
+        }
+    }
+    .indicators {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            width: 8px;
+            height: 8px;
+            stroke: #c4c4c4;
+
+            path {
+                fill: #c4c4c4;
+            }
+
+            &.active {
+                stroke: c.$green;
+                path {
+                    fill: c.$green;
+                }
+            }
+            &:not(:last-child) {
+                margin-right: 6px;
+            }
+        }
+    }
+}

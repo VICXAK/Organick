@@ -1,0 +1,56 @@
+@use '../../styles/common' as c;
+
+.hero {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../../assets/main-hero-bg.jpg);
+    background-attachment: fixed;
+    height: 898px;
+    margin-bottom: 145px;
+    background-position: center;
+
+    &__main {
+        max-width: 530px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        @include c.media(c.$sm) {
+            max-width: 300px;
+        }
+        &-label {
+            color: #68a47f;
+            font-family: c.$yellowTail;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin-bottom: 8px;
+        }
+    }
+}
+
+.hero__main-title {
+    color: c.$main;
+    font-family: c.$roboto;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+
+    @include c.media(c.$sm) {
+        font-size: 30px;
+    }
+}
+.hero__main-passage {
+    @extend .hero__main-title;
+    margin-bottom: 23px;
+}
+
+.d-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
